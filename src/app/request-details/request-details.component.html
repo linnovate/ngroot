@@ -1,0 +1,16 @@
+<div *ngIf="request" #requestForm (submit)="onSubmit()">
+        <div class="request-header">
+            <div>
+                <div class="request-title">{{request.title}}</div>
+                <div class="subtitle">
+                    <div>{{request.name}}</div>
+                    <div>{{request.date}}</div>
+                </div>
+            </div>
+            <div class="request-status" *ngIf="request.status" [style.background-color]="request.getStatusColor()">{{request.status}}</div>
+        </div>
+        <div class="request-desc">
+            <div>description</div>
+            <textarea type="text">{{request.description}}</textarea>
+        </div>
+    </div>

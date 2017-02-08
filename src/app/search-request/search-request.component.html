@@ -1,0 +1,29 @@
+<div class="main-content">
+      <div>
+        <div class="header">
+          <div>ROOT</div>
+        </div>
+        <div class="sub-header">
+          My requests
+        </div>
+        <div class="requests-table">
+          <!--<div *ngFor="let request of requests"
+            (click)="onSelect(request)" [ngClass]="{'active': selectedRequest.name === request.name}">
+              <div>{{request.title}}</div>
+              <div>{{request.name}}</div>
+              <div [style.color]="request.getStatusColor()">{{request.status}}</div>
+               <div>{{request.date}}</div>
+                 <div>></div>
+          </div>-->
+          <div *ngFor="let request of requests"
+            (click)="onSelect(request)">
+              <div>{{request.version}}</div>
+              <div>{{request.url}}</div>
+          </div>
+          </div>
+      </div>
+      <div>
+        <div></div>
+         <request-details [request]="selectedRequest"></request-details>
+      </div>
+    </div>

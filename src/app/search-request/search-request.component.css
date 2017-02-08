@@ -1,0 +1,82 @@
+body {
+    background: red;
+}
+
+search-request .requests-table  {
+    font-size: 83%;
+    border-bottom: none !important;
+}
+search-request .requests-table > div {
+    display: flex;
+    border-bottom: 1px solid #DFDFDF;
+    padding: 8px 0px 8px 10px;
+}
+search-request .requests-table > div > div:nth-of-type(1) {
+    width: 38%;
+    font-weight: bold;
+}
+search-request .requests-table > div > div:nth-of-type(2) {
+    width: 25%
+}
+
+search-request .requests-table > div > div:nth-of-type(3) {
+    width: 15%
+}
+search-request .requests-table > div > div:nth-of-type(4) {
+    width: 15%
+}
+search-request .requests-table > div.active {
+  background-color: black;
+  color: white;
+}
+search-request .request-header {
+    padding-top: 8px;
+    padding-bottom: 9px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+search-request .request-header .request-title {
+    font-size: 25px;
+    font-weight: 800;
+}
+search-request .request-header .subtitle {
+    display: flex;
+    color: #787877;
+    font-size: 16px;
+}
+search-request .request-header .subtitle > div:first-child {
+    border-right: 1px solid #787877;;
+    padding-right: 14px;
+    margin-right: 14px;
+}
+search-request .request-header > .request-status {
+    font-size: 14px;
+    color: white;
+    padding: 1px 12px;
+    border-radius: 12px;
+
+}
+search-request request-detail > div > div {
+    border-bottom: 1px solid #C6C6C4;
+    margin: 0px 40px;
+}
+
+search-request .request-desc {
+    padding: 22px 0px;
+
+}
+search-request .request-desc > div {
+   color: #FFA000;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 7px;
+
+}
+search-request .request-desc textarea {
+    font-size: 13px;
+    background-color: transparent;
+    border: 1px solid #C8C8C5;
+
+}
