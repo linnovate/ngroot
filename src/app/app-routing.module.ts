@@ -5,10 +5,6 @@ import { SearchRequestComponent } from './search-request/search-request.componen
 
 const routes: Routes = [
   {
-    path: '',
-    children: []
-  },
-  {
     path: 'requests',
     component: SearchRequestComponent
   }
