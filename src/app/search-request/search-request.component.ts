@@ -18,13 +18,15 @@ export class SearchRequestComponent implements OnInit {
   errorMessage: string;
   requests: Request[];
   mode = 'Observable';
-
-  // requests = REQUESTS;
-
-  // selectedRequest =  this.requests[0];
-  // onSelect(request: Request): void {;
-  //   this.selectedRequest = request;
-  // }
+  // selectedRequest = {
+  //     name: 'string',
+  //       title: 'string',
+  //       description: 'string',
+  //       status: 'string',
+  //       date: 'string'
+  // };
+  selectedRequest: Request;
+  master: string = 'Master';
 
   constructor(private requestsService: RequestsService) { }
 
@@ -35,8 +37,19 @@ export class SearchRequestComponent implements OnInit {
   getRequests() {
     this.requestsService.get()
                      .subscribe(
-                       requests => this.requests = requests,
+                       requests =>  {
+                         let _requests = [];
+                         requests.forEach(function(request) {
+                           _requests.push(new Request(request.name, request.title, request.description, request.status, request.date, request._id));
+                         });
+                         this.requests = _requests;
+                         this.selectedRequest = this.requests[0];
+                       },
                        error =>  this.errorMessage = <any>error);
   }
+
+   onSelect(request: Request): void {
+      this.selectedRequest = request;
+    }
 
 }

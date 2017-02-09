@@ -4,8 +4,10 @@ export class Request {
        public title: string,
        public description: string,
        public status: string,
-       public date: string
+       public date: string,
+       public _id: string
     ) { }
+
     getStatusColor() {
         switch (this.status) {
             case "completed":

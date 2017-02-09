@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { SearchRequestComponent } from './search-request/search-request.component'
+
 const routes: Routes = [
   {
     path: '',
     children: []
+  },
+  {
+    path: 'requests',
+    component: SearchRequestComponent
   }
 ];
 

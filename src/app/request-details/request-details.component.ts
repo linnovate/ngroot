@@ -9,8 +9,7 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
   styleUrls: ['./request-details.component.css']
 })
 export class RequestDetailsComponent implements OnInit {
-  @Input()
-  request: Request;
+  @Input() request: Request;
   documentName: string;
   onSubmit(): void {
       console.log("re",this.request);
@@ -20,9 +19,11 @@ export class RequestDetailsComponent implements OnInit {
         this.documentName = file.name;
     }
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit() {
+    console.log(this.request, 'sdsadfsdf');
   }
 
 }

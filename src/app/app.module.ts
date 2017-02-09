@@ -25,6 +25,6 @@ import { RequestsService } from './_services/requests.service'
   providers: [
     RequestsService
   ],
-  bootstrap: [AppComponent, SearchRequestComponent, RequestDetailsComponent]
+  bootstrap: [AppComponent, SearchRequestComponent]
 })
 export class AppModule { }

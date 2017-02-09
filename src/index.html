@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+  <base href="/">
   <meta charset="utf-8">
   <title>Ngroot</title>
   <base href="/">
@@ -10,6 +11,10 @@
 </head>
 <body>
   <app-root>Loading...</app-root>
+  <nav>
+    <a routerLink="/requests" routerLinkActive="active">Requests</a>
+  </nav>
+  <router-outlet></router-outlet>
   <search-request></search-request>
 </body>
 </html>

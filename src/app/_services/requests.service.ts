@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 import { Request } from '../_classes/request';
 
@@ -11,14 +11,20 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RequestsService {
 
-  private requestsUrl = 'https://angular-ui.github.io/bootstrap/versions-mapping.json';  // URL to web API
+  private requestsUrl = 'http://root.hrm.demo.linnovate.net/api/tasks';  // URL to web API
 
   constructor(private http: Http) { }
 
   get (): Observable<Request[]> {
-    return this.http.get(this.requestsUrl)
-                    .map(this.extractData)
-                    .catch(this.handleError);
+
+const token = 'eyJhbGciOiJIUzI1NiJ9.JTdCJTIyX192JTIyOjAsJTIyaWQlMjI6JTIyb3JpdEBsaW5ub3ZhdGUubmV0JTIyLCUyMm5hbWUlMjI6JTIyT3JpdCUyMFBlcnNpayUyMiwlMjJlbWFpbCUyMjolMjJvcml0QGxpbm5vdmF0ZS5uZXQlMjIsJTIydXNlcm5hbWUlMjI6JTIyb3JpdCUyMiwlMjJfaWQlMjI6JTIyNTg5YjIxNjNkOGQ0NmExMzAwMTdkMjY1JTIyLCUyMnByb3ZpZGVyJTIyOiUyMmxvY2FsJTIyLCUyMnJvbGVzJTIyOiU1QiUyMmF1dGhlbnRpY2F0ZWQlMjIlNUQlN0Q.mvO-7y3jGOYqsUC1wE-NmiAC_uyoDYgO-0Ck5HS6_u8';
+
+const headers = new Headers();
+    
+    headers.append('Authorization', 'Bearer ' + token);
+    return this.http.get(this.requestsUrl, { headers})
+    .map(this.extractData)
+    .catch(this.handleError);
   }
   private extractData(res: Response) {
     let body = res.json();
