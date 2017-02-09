@@ -40,7 +40,7 @@ export class SearchRequestComponent implements OnInit {
                        requests =>  {
                          let _requests = [];
                          requests.forEach(function(request) {
-                           _requests.push(new Request(request.name, request.title, request.description, request.status, request.date, request._id));
+                           _requests.push(new Request(request.name, request.title, request.description, request.status, request.due, request._id));
                          });
                          this.requests = _requests;
                          this.selectedRequest = this.requests[0];

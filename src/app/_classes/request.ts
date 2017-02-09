@@ -4,17 +4,17 @@ export class Request {
        public title: string,
        public description: string,
        public status: string,
-       public date: string,
+       public due: string,
        public _id: string
     ) { }
 
     getStatusColor() {
         switch (this.status) {
-            case "completed":
+            case "review":
             return '#8DC63F';
-            case "received":
+            case "in-progress":
             return '#00AEEF';
-            case "active":
+            case "rejected":
             return '#F06EAA';
             default:
             return '#8DC63F';

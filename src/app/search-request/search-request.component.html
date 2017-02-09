@@ -12,7 +12,7 @@
         <div>{{request.title}}</div>
 		<div>{{request.name}}</div>
 		<div [style.color]="request.getStatusColor()">{{request.status}}</div>
-        <div>{{request.date}}</div>
+        <div>{{request.due | date:shortDate}}</div>
         <div>></div>
       </div>
     </div>

@@ -3,8 +3,8 @@
             <div>
                 <div class="request-title">{{request.title}}</div>
                 <div class="subtitle">
-                    <div>{{request.name}}</div>
-                    <div>{{request.date}}</div>
+                    <div>{{request.title}}</div>
+                    <div>{{request.due | date:shortDate}}</div>
                 </div>
             </div>
             <div class="request-status" *ngIf="request.status" [style.background-color]="request.getStatusColor()">{{request.status}}</div>
